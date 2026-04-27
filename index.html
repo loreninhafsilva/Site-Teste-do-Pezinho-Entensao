@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teste do Pézinho — Triagem Neonatal Biológica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <span class="foot-icon">👣</span>
+    <h1>Teste do Pézinho</h1>
+    <p>Triagem Neonatal Biológica</p>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Início</div>
+    <a class="nav-link active" href="#" onclick="showPage('home', this)">
+      <span class="nav-icon">🏠</span> Página Inicial
+    </a>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Sobre o Exame</div>
+    <a class="nav-link" href="#" onclick="showPage('sobre', this)">
+      <span class="nav-icon">🔬</span> Sobre o Teste
+    </a>
+    <a class="nav-link" href="#" onclick="showPage('doencas', this)">
+      <span class="nav-icon">🧬</span> Doenças Pesquisadas
+    </a>
+    <a class="nav-link" href="#" onclick="showPage('tecnica', this)">
+      <span class="nav-icon">💉</span> Técnica de Coleta
+    </a>
+    <a class="nav-link" href="#" onclick="showPage('ampliacao', this)">
+      <span class="nav-icon">📈</span> Ampliação do Teste
+    </a>
+        <a class="nav-link" href="#" onclick="showPage('resultados', this)">
+      <span class="nav-icon">📋</span> Resultados de Exames
+    </a>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Conteúdo</div>
+    <a class="nav-link" href="#" onclick="showPage('videos', this)">
+      <span class="nav-icon">🎬</span> Vídeos
+    </a>
+    <a class="nav-link" href="#" onclick="showPage('artigos', this)">
+      <span class="nav-icon">📄</span> Artigos Científicos
+    </a>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Recursos</div>
+    <a class="nav-link" href="#" onclick="showPage('downloads', this)">
+Materiais para Download
+    </a>
+    <a class="nav-link" href="#" onclick="showPage('faq', this)">
+Perguntas Frequentes
+    </a>
+    <a class="nav-link" href="#" onclick="showPage('rc', this)">
+Teste do Pézinho RC
+    </a>
+  </div>
+
+  <div class="sidebar-footer">
+    Projeto de Extensão · <span>UNESP IB</span><br/>
+    Biofísica — Ciências Biológicas 2026
+  </div>
+</nav>
+
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+<button class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- ═══ HOME ═══ -->
+  <div class="page active" id="page-home">
+    <div class="hero">
+      <div class="hero-badge">🔬 Triagem Neonatal Biológica</div>
+      <h2>O <em>Teste do Pézinho</em> pode salvar a vida do seu bebê</h2>
+      <p>Um simples furadinha no calcanhar que detecta até 14 grupos de doenças antes mesmo dos sintomas aparecerem. Gratuito, obrigatório e essencial.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number">14+</div>
+          <div class="stat-label">Grupos de doenças</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">3–5</div>
+          <div class="stat-label">Dias de vida do bebê</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Gratuito pelo SUS</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">Lei</div>
+          <div class="stat-label">10.889/01 — Obrigatório</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <div class="card-grid">
+        <div class="card" onclick="showPage('sobre', document.querySelector('[onclick*=sobre]'))">
+          <div class="card-icon">🔬</div>
+          <div class="card-title">O que é o Teste?</div>
+          <div class="card-desc">Conheça a triagem neonatal biológica, como funciona e por que ela é fundamental para a saúde do seu bebê.</div>
+          <a class="card-btn">Saiba mais →</a>
+        </div>
+        <div class="card" onclick="showPage('doencas', document.querySelector('[onclick*=doencas]'))">
+          <div class="card-icon">🧬</div>
+          <div class="card-title">Doenças Pesquisadas</div>
+          <div class="card-desc">Doença falciforme, fenilcetonúria, fibrose cística, hipotireoidismo e muito mais. Veja todas as condições rastreadas.</div>
+          <a class="card-btn">Ver doenças →</a>
+        </div>
+        <div class="card" onclick="showPage('tecnica', document.querySelector('[onclick*=tecnica]'))">
+          <div class="card-icon">💉</div>
+          <div class="card-title">Como é feita a coleta?</div>
+          <div class="card-desc">Entenda o passo a passo da técnica de coleta, por que no calcanhar e o que acontece com o sangue depois.</div>
+          <a class="card-btn">Ver técnica →</a>
+        </div>
+        <div class="card" onclick="showPage('faq', document.querySelector('[onclick*=faq]'))">
+          <div class="card-icon">❓</div>
+          <div class="card-title">Perguntas Frequentes</div>
+          <div class="card-desc">Dúvidas sobre prazo, custo, locais de coleta e o que fazer com o resultado. Respondemos as principais questões.</div>
+          <a class="card-btn">Ver FAQ →</a>
+        </div>
+        <div class="card" onclick="showPage('ampliacao', document.querySelector('[onclick*=ampliacao]'))">
+          <div class="card-icon">📈</div>
+          <div class="card-title">Teste Ampliado</div>
+          <div class="card-desc">Em 2021 foi aprovada a lei que garante o teste ampliado no SUS, monitorando ainda mais doenças.</div>
+          <a class="card-btn">Saiba mais →</a>
+        </div>
+        <div class="card" onclick="showPage('resultados', document.querySelector('[onclick*=resultados]'))">
+          <div class="card-icon">📋</div>
+          <div class="card-title">Resultados</div>
+          <div class="card-desc">Entenda como interpretar o laudo do exame e o que fazer em caso de resultado alterado.</div>
+          <a class="card-btn">Ver orientações →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SOBRE ═══ -->
+  <div class="page" id="page-sobre">
+    <div class="section-header">
+      <span class="section-tag">🔬 Informação</span>
+      <h2>Sobre o Teste do Pézinho</h2>
+      <p>Tudo que você precisa saber sobre a triagem neonatal biológica.</p>
+    </div>
+    <div class="content-area">
+      <div class="highlight-box">
+        <h3>✨ O que é a triagem neonatal?</h3>
+        <p>A triagem neonatal biológica, popularmente conhecida como <strong>teste do pézinho</strong>, é um exame realizado a partir da análise do sangue do bebê. Tem capacidade de diagnóstico de até <strong>14 grupos de doenças</strong> que não apresentam sintomas no nascimento. Se não tratadas, podem ocasionar diversos danos à saúde — em alguns casos, o tratamento tem sua eficácia significativamente afetada após a manifestação da doença, por isso a importância do diagnóstico precoce.</p>
+      </div>
+
+      <div class="info-block">
+        <h3>⚖️ É obrigatório?</h3>
+        <p>Sim! O exame do pézinho é considerado obrigatório conforme a <strong>Lei n° 10.889/01</strong> e reforçado pela <strong>Portaria GM/MS Nº 7.293</strong>, que institui o Programa Nacional de Triagem Neonatal (PNTN). O teste é disponibilizado <strong>gratuitamente pelo SUS</strong> em todo o Brasil.</p>
+      </div>
+
+      <div class="info-block">
+        <h3>📍 Onde fazer?</h3>
+        <p>O exame pode ser realizado em:</p>
+        <br/>
+        <ul>
+          <li>Unidades Básicas de Saúde (UBS)</li>
+          <li>Maternidades e hospitais conveniados ao SUS</li>
+          <li>Postos de saúde do município</li>
+          <li>Laboratórios credenciados ao Programa Nacional de Triagem Neonatal</li>
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h3>📚 Legislação</h3>
+        <ul>
+          <li><strong>Lei n° 10.889/01</strong> — Obrigatoriedade do teste do pézinho no estado de São Paulo</li>
+          <li><strong>Lei n° 14.154/2021</strong> — Garante o teste ampliado no SUS</li>
+          <li><strong>Portaria GM/MS Nº 7.293/2025</strong> — Programa Nacional de Triagem Neonatal</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DOENÇAS ═══ -->
+  <div class="page" id="page-doencas">
+    <div class="section-header">
+      <span class="section-tag">🧬 Clínica</span>
+      <h2>Doenças Pesquisadas</h2>
+      <p>O teste do pézinho rastreia até 14 grupos de doenças. Conheça as principais condições investigadas.</p>
+    </div>
+    <div class="content-area">
+      <div class="disease-grid">
+        <div class="disease-card">
+          <h3>🩸 Doença Falciforme</h3>
+          <p>Produção de células sanguíneas anômalas, ocasionando anemia, dor intensa, cansaço, infecções graves e icterícia. É uma das doenças hereditárias mais comuns no Brasil.</p>
+        </div>
+        <div class="disease-card">
+          <h3>🫁 Fibrose Cística</h3>
+          <p>Produção de muco espesso que obstrui pulmões e pâncreas, causando infecções respiratórias frequentes e problemas digestivos. O diagnóstico precoce melhora muito o prognóstico.</p>
+        </div>
+        <div class="disease-card">
+          <h3>🦋 Hipotireoidismo Congênito</h3>
+          <p>Deficiência na produção de hormônios da tireoide. Sem tratamento pode causar retardo mental e atraso no crescimento. Com diagnóstico precoce, o bebê se desenvolve normalmente.</p>
+        </div>
+        <div class="disease-card">
+          <h3>🧪 Fenilcetonúria (PKU)</h3>
+          <p>Incapacidade de metabolizar o aminoácido fenilalanina, muito presente em alimentos ricos em proteínas. Seu acúmulo é tóxico ao organismo e pode causar dano neurológico grave.</p>
+        </div>
+        <div class="disease-card">
+          <h3>🍬 Galactosemia</h3>
+          <p>Incapacidade de metabolizar a galactose (açúcar do leite). Pode causar danos ao fígado, rins e cérebro. O diagnóstico precoce permite a substituição do leite materno.</p>
+        </div>
+        <div class="disease-card">
+          <h3>💊 Deficiência de Biotinidase</h3>
+          <p>Incapacidade de reutilizar a biotina (vitamina B7). Pode causar crises epilépticas, problemas neurológicos e cutâneos. Tratável com suplementação de biotina.</p>
+        </div>
+        <div class="disease-card">
+          <h3>🔴 Hiperplasia Adrenal Congênita</h3>
+          <p>Desequilíbrio na produção de hormônios adrenais. Pode afetar o desenvolvimento sexual e causar crises de perda de sal, que são potencialmente fatais.</p>
+        </div>
+        <div class="disease-card">
+          <h3>🧠 Aminoacidopatias</h3>
+          <p>Grupo de doenças do metabolismo dos aminoácidos. Com o teste ampliado, é possível rastrear diversas condições que causariam dano neurológico irreversível se não tratadas.</p>
+        </div>
+        <div class="disease-card">
+          <h3>⚡ Acidemias Orgânicas</h3>
+          <p>Distúrbios do metabolismo de ácidos orgânicos que podem causar acidose metabólica, vômitos e comprometimento neurológico.</p>
+        </div>
+        <div class="disease-card">
+          <h3>🔋 Distúrbios da Oxidação de Ácidos Graxos</h3>
+          <p>Grupo de doenças em que o organismo não consegue usar os ácidos graxos para produzir energia, levando a crises hipoglicêmicas.</p>
+        </div>
+        <div class="disease-card">
+          <h3>🫀 Toxoplasmose Congênita</h3>
+          <p>Infecção causada pelo parasita <i>Toxoplasma gondii</i>, transmitida da mãe para o bebê. Pode causar lesões oculares e neurológicas.</p>
+        </div>
+        <div class="disease-card">
+          <h3>🧬 Hemoglobinopatias</h3>
+          <p>Além da doença falciforme, outras alterações na hemoglobina são rastreadas, como as talassemias, que causam anemia crônica.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ TÉCNICA ═══ -->
+  <div class="page" id="page-tecnica">
+    <div class="section-header">
+      <span class="section-tag">💉 Procedimento</span>
+      <h2>Técnica de Coleta</h2>
+      <p>Entenda como é realizado o exame e por que a coleta é feita no calcanhar do bebê.</p>
+    </div>
+    <div class="content-area">
+      <div class="highlight-box">
+        <h3>🦶 Por que no calcanhar?</h3>
+        <p>O calcanhar é uma região com <strong>muitos vasos sanguíneos</strong>, de fácil acesso e <strong>praticamente indolor</strong> para o bebê. A área plantar do calcanhar é bem vascularizada e a pele é mais espessa, reduzindo o risco de lesão em estruturas internas.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Aguardar o momento certo</h4>
+            <p>O exame deve ser realizado entre o <strong>3º e o 5º dia de vida</strong> do bebê. Esse período é fundamental pois garante que o bebê já se alimentou adequadamente (leite materno), o que é necessário para que algumas substâncias atinjam níveis detectáveis no sangue.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Preparação do calcanhar</h4>
+            <p>O profissional de saúde aquece o calcanhar do bebê para facilitar a circulação sanguínea e faz a antissepsia (limpeza com álcool) do local da punção.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>A pequena punção</h4>
+            <p>Com uma lanceta estéril, é feito um pequeno furo na região lateral do calcanhar. A primeira gota de sangue é descartada com algodão seco para evitar contaminação.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Coleta no papel filtro</h4>
+            <p>As gotas de sangue são coletadas em um <strong>papel filtro especial</strong> (cartão de triagem), preenchendo os círculos marcados. É importante que o sangue impregne o papel por completo, sem sobreposição de gotas.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h4>Secagem e envio</h4>
+            <p>O papel filtro é deixado secar ao ar livre por pelo menos 3 horas, em superfície horizontal e fora da luz solar. Depois é enviado ao laboratório de referência para análise.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h4>Análise laboratorial</h4>
+            <p>No laboratório, as amostras passam por diversas técnicas analíticas (fluorimetria, espectrometria de massa em tandem, cromatografia, entre outras) para detectar as substâncias investigadas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ AMPLIAÇÃO ═══ -->
+  <div class="page" id="page-ampliacao">
+    <div class="section-header">
+      <span class="section-tag">📈 Política de Saúde</span>
+      <h2>Ampliação do Teste do Pézinho</h2>
+      <p>Como o programa evoluiu ao longo dos anos e o que muda com a versão ampliada.</p>
+    </div>
+    <div class="content-area">
+      <div class="highlight-box">
+        <h3>🏛️ Lei n° 14.154/2021</h3>
+        <p>Em 2021, foi aprovada a lei que garante o <strong>teste ampliado</strong> no SUS, tornando-se a versão disponível atualmente. Com isso, o número de doenças monitoradas aumentou significativamente, garantindo diagnóstico precoce para mais condições raras.</p>
+      </div>
+
+      <div class="two-col">
+        <div class="info-block">
+          <h3>📅 Histórico do Programa</h3>
+          <ul>
+            <li><strong>1976</strong> — Primeiros programas estaduais de triagem neonatal no Brasil</li>
+            <li><strong>1992</strong> — São Paulo amplia para fenilcetonúria e hipotireoidismo</li>
+            <li><strong>2001</strong> — Lei n° 10.889 torna o teste obrigatório em SP</li>
+            <li><strong>2001</strong> — PNTN instituído (Fases I e II)</li>
+            <li><strong>2012</strong> — Inclusão de fibrose cística (Fase IV)</li>
+            <li><strong>2021</strong> — Lei do teste ampliado aprovada</li>
+            <li><strong>2025</strong> — Portaria GM/MS Nº 7.293 reforça o programa</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h3>🔬 O que muda com a ampliação?</h3>
+          <ul>
+            <li>Rastreamento de mais de 50 doenças raras</li>
+            <li>Uso de espectrometria de massa em tandem (MS/MS)</li>
+            <li>Diagnóstico de aminoacidopatias, acidemias orgânicas e distúrbios de oxidação de ácidos graxos</li>
+            <li>Maior cobertura para crianças de todo o Brasil via SUS</li>
+            <li>Redução de sequelas e mortalidade infantil</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h3>🌍 Contexto Internacional</h3>
+        <p>Países como Estados Unidos e Alemanha já rastreiam mais de 50 doenças há décadas. Com a ampliação brasileira, o país se aproxima dos padrões internacionais recomendados pela Organização Mundial da Saúde, garantindo equidade no acesso ao diagnóstico precoce para toda a população.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ VÍDEOS ═══ -->
+  <div class="page" id="page-videos">
+    <div class="section-header">
+      <span class="section-tag">🎬 Audiovisual</span>
+      <h2>Vídeos</h2>
+      <p>Conteúdo audiovisual sobre o teste do pézinho e triagem neonatal.</p>
+    </div>
+    <div class="content-area">
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-thumb" onclick="openVideo('https://youtu.be/y5N2Iy-olBE?si=ED5G-AuPFoqUn7Oo')">
+            <div class="play-btn">▶</div>
+            <div class="thumb-label">Educativo · 55 seg</div>
+          </div>
+          <div class="video-body">
+            <h4>O que é o Teste do Pézinho?</h4>
+            <p>Explicação completa sobre a triagem neonatal biológica para pais e gestantes.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb" onclick="openVideo('https://youtu.be/nrWxjajVyOI?si=CuE-pcnTV1BVSKia')">
+            <div class="play-btn">▶</div>
+            <div class="thumb-label">Técnico · 38 seg</div>
+          </div>
+          <div class="video-body">
+            <h4>Técnica de Coleta — Passo a Passo</h4>
+            <p>Demonstração prática da punção do calcanhar e coleta no papel filtro.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb" onclick="openVideo('https://youtu.be/_9qwYG2lct8?si=VXB34wY5gGXCTDdA')">
+            <div class="play-btn">▶</div>
+            <div class="thumb-label">Clínico · 2 min</div>
+          </div>
+          <div class="video-body">
+            <h4>Doença Falciforme — Diagnóstico Precoce</h4>
+            <p>Importância do rastreamento neonatal para a doença falciforme.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb" onclick="openVideo('https://youtu.be/NAL2NKEv_TM?si=ZhKdgXevAjm_QzfT')">
+            <div class="play-btn">▶</div>
+            <div class="thumb-label">Clínico · 18 min</div>
+          </div>
+          <div class="video-body">
+            <h4>Fenilcetonúria — O que é e como tratar</h4>
+            <p>Entenda a PKU e como o diagnóstico precoce muda o prognóstico do bebê.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb" onclick="openVideo('https://youtu.be/KkdiRs3rzeg?si=0WA_Uxnjk6eWcVlh')">
+            <div class="play-btn">▶</div>
+            <div class="thumb-label">Política · 7 min</div>
+          </div>
+          <div class="video-body">
+            <h4>Teste Ampliado no SUS</h4>
+            <p>O que muda com a nova lei e quais doenças passam a ser rastreadas.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb" onclick="openVideo('https://youtu.be/WuAhwBU90Lg?si=KMM2NKsItgiE1kpk')">
+            <div class="play-btn">▶</div>
+            <div class="thumb-label">Clínico · 5 min</div>
+          </div>
+          <div class="video-body">
+            <h4>Fibrose Cística</h4>
+            <p>Dr. Drauzio Varella explica sobre esta doença genética e seu impacto na vida.</p>
+          </div>
+        </div>
+      </div>
+
+      <br/>
+    </div>
+  </div>
+
+  <!-- ═══ ARTIGOS ═══ -->
+  <div class="page" id="page-artigos">
+    <div class="section-header">
+      <span class="section-tag">📄 Ciência</span>
+      <h2>Artigos Científicos</h2>
+      <p>Publicações científicas de referência sobre triagem neonatal.</p>
+    </div>
+    <div class="content-area">
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title" style="margin-top:10px">CONHECIMENTO E ASPECTOS LEGAIS DA TRIAGEM NEONATAL NO BRASIL: AVANÇOS NO CAMPO DA MEDICINA</div>
+          <div class="card-desc">O Programa Nacional de Triagem Neonatal visa realizar detecção dos casos suspeitos, confirmação diagnóstica, acompanhamento e tratamento de doenças congênitas, o mesmo foi lançado no ano de 2001 no Brasil e segue vigente até os dias atuais.</div>
+          <div class="card-meta">📅 2025 · Revista Ibero-Americana de Humanidades, Ciências e Educação</div>
+          <a class="card-btn" href="https://doi.org/10.51891/rease.v11i1.17958" target="_blank">Ver artigo →</a>
+        </div>
+        <div class="card">
+          <div class="card-title" style="margin-top:10px">TRIAGEM NEONATAL POR ESPECTROMETRIA DE MASSAS EM TANDEM (MS/MS) para a detecção da deficiência de acil-CoA desidrogenase de cadeia média (MCADD) </div>
+          <div class="card-desc">Avaliação do uso de MS/MS para detecção de aminoacidopatias e acidemias orgânicas em recém-nascidos.</div>
+          <div class="card-meta">📅 2022 · Comissão Nacional de Incorporação de Tecnologias no Sistema Único de Saúde - CONITEC</div>
+          <a class="card-btn" href="https://www.gov.br/conitec/pt-br/midias/consultas/relatorios/2022/sociedade/20221024_RESoc_373_TriagemNeonatal_Espectrometria.pdf" target="_blank">Ver artigo →</a>
+        </div>
+        <div class="card">
+          <div class="card-title" style="margin-top:10px">Importância do diagnóstico e tratamento da fenilcetonúria</div>
+          <div class="card-desc">Revisão que aborda desde a PKU clássica até a hiperfenilalaninemia branda, incluindo relato sobre a PKU maternal e os efeitos da exposição do útero a altos níveis de fenilalanina sobre o feto.</div>
+          <div class="card-meta">📅 2000 · Revista de Saúde Pública USP</div>
+          <a class="card-btn" href="https://doi.org/10.1590/S0034-89102000000100016" target="_blank">Ver artigo →</a>
+        </div>
+        <div class="card">
+          <div class="card-title" style="margin-top:10px">Prevalência da anemia falciforme em crianças no Brasil</div>
+          <div class="card-desc">Este trabalho possui como objetivo propagar a importância de informações a cerca de tal patologia sobretudo nas crianças e aconselhar a abordagem genética.</div>
+          <div class="card-meta">📅 2021 · Brazilian Journal of Health Review</div>
+          <a class="card-btn" href="https://doi.org/10.34119/bjhrv4n6-261" target="_blank">Ver artigo →</a>
+        </div>
+        <div class="card">
+          <div class="card-title" style="margin-top:10px">Onde Estamos e Aonde Gostaríamos de Chegar na Ampliação do Programa Nacional de Triagem Neonatal no Sistema Único de Saúde</div>
+          <div class="card-desc">Este estudo teve como objetivo identificar e descrever as recomendações da Comissão Nacional de Incorporação de Tecnologias no SUS (Conitec) sobre a ampliação do PNTN, bem como os desafios para a avaliação de incorporação dessas doenças.</div>
+          <div class="card-meta">📅 2025 · Epidemiologia e Serviços de Saúde</div>
+          <a class="card-btn" href="http://dx.doi.org/10.5327/2237-9622.2025.v34s1.262" target="_blank">Ver artigo →</a>
+        </div>
+        <div class="card">
+          <div class="card-title" style="margin-top:10px">Hipotireoidismo congênito: Triagem Neonatal</div>
+          <div class="card-desc">Protocolo atual para diagnóstico e manejo do hipotireoidismo congênito identificado na triagem neonatal.</div>
+          <div class="card-meta">📅 2018 · Sociedade Brasileira de Pediatria</div>
+          <a class="card-btn" href="https://www.sbp.com.br/fileadmin/user_upload/_21369c-DC_Hipotireoidismo_Congenito.pdf" target="_blank">Ver artigo →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DOWNLOADS ═══ -->
+  <div class="page" id="page-downloads">
+    <div class="section-header">
+      <span class="section-tag">⬇️ Recursos</span>
+      <h2>Materiais para Download</h2>
+      <p>Documentos, cartilhas e materiais educativos disponíveis para download gratuito.</p>
+    </div>
+    <div class="content-area">
+
+      <h3 style="color:var(--text-muted); font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:14px;">📘 Cartilhas e Guias</h3>
+      <div class="download-item">
+        <div class="download-icon">📘</div>
+        <div class="download-info">
+          <h4>Cartilha do Teste do Pézinho — Pais e Gestantes</h4>
+          <p>Guia completo e acessível sobre o exame para famílias · PDF · 13 páginas</p>
+        </div>
+        <a class="download-btn" href="https://www.extranet.ceuma.br/ceuma-wordpress/wp-content/uploads/2021/04/Manual-de-Teste-do-Pezinho.pdf" target="_blank">Baixar</a>
+      </div>
+      <div class="download-item">
+        <div class="download-icon">📗</div>
+        <div class="download-info">
+          <h4>Manual de Normas Técnicas — PNTN</h4>
+          <p>Documento oficial do Ministério da Saúde · PDF · 83 páginas</p>
+        </div>
+        <a class="download-btn" href="https://bvsms.saude.gov.br/bvs/publicacoes/triagem_neonatal_biologica_manual_tecnico.pdf" target="_blank">Baixar</a>
+      </div>
+
+      <br/>
+      <h3 style="color:var(--text-muted); font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:14px;">🖼️ Infográficos e Materiais Visuais</h3>
+      <div class="download-item">
+        <div class="download-icon">🖼️</div>
+        <div class="download-info">
+          <h4>Folder Educativo — Triagem Neonatal</h4>
+          <p>Material do projeto de extensão UNESP IB · PDF · Frente e verso</p>
+        </div>
+        <a class="download-btn">Disponível em breve</a>
+      </div>
+
+      <br/>
+      <h3 style="color:var(--text-muted); font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:14px;">⚖️ Legislação</h3>
+      <div class="download-item">
+        <div class="download-icon">⚖️</div>
+        <div class="download-info">
+          <h4>Lei n° 14.154/2021 — Teste Ampliado</h4>
+          <p>Lei federal que garante o teste ampliado no SUS</p>
+        </div>
+        <a class="download-btn" href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14154.htm" target="_blank">Ver lei</a>
+      </div>
+      <div class="download-item">
+        <div class="download-icon">📋</div>
+        <div class="download-info">
+          <h4>Portaria GM/MS Nº 7.293/2025 — PNTN</h4>
+          <p>Portaria que institui o Programa Nacional de Triagem Neonatal</p>
+        </div>
+        <a class="download-btn" href="https://bvsms.saude.gov.br/bvs/saudelegis/gm/2025/prt7293_27_06_2025.html" target="_blank">Ver portaria</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FAQ ═══ -->
+  <div class="page" id="page-faq">
+    <div class="section-header">
+      <span class="section-tag">❓ Dúvidas</span>
+      <h2>Perguntas Frequentes</h2>
+      <p>Respondemos as principais dúvidas sobre o teste do pézinho.</p>
+    </div>
+    <div class="content-area">
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Qual o melhor momento para fazer o teste? <span>+</span></div>
+        <div class="faq-answer">O teste deve ser realizado entre o <strong>3º e o 5º dia de vida</strong> do bebê. Esse prazo é essencial porque garante que o bebê já se alimentou (com leite materno ou fórmula), o que é necessário para que certas substâncias estejam em níveis detectáveis no sangue. Nunca deve ser feito antes de 48h de vida.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">O teste dói no bebê? <span>+</span></div>
+        <div class="faq-answer">O desconforto é mínimo. O calcanhar é uma região com pele mais espessa e bem vascularizada, tornando a punção <strong>praticamente indolor</strong>. Muitos bebês nem chegam a acordar durante o procedimento. Amamentação durante ou logo após a coleta pode ajudar a confortar o bebê.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Onde posso fazer o teste gratuitamente? <span>+</span></div>
+        <div class="faq-answer">O teste é disponibilizado <strong>gratuitamente pelo SUS</strong> em Unidades Básicas de Saúde (UBS), maternidades e hospitais conveniados. Após a alta da maternidade, você pode levar seu bebê à UBS mais próxima para realizar o exame dentro do prazo.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Quanto tempo demora o resultado? <span>+</span></div>
+        <div class="faq-answer">O prazo varia de acordo com o laboratório e a região. Em geral, os resultados ficam prontos em <strong>10 a 30 dias</strong>. Em caso de resultado alterado, a família é <strong>convocada com urgência</strong> pelo serviço de saúde para exames confirmatórios — não espere o prazo máximo se não receber resposta.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">O que acontece se o resultado for alterado? <span>+</span></div>
+        <div class="faq-answer">Um resultado alterado <strong>não significa diagnóstico definitivo</strong>. É necessário realizar exames confirmatórios. A família é convocada pelo serviço de triagem para orientação e encaminhamento a especialistas. O tratamento precoce, nessa fase, é muito mais eficaz.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">O que é o teste ampliado? <span>+</span></div>
+        <div class="faq-answer">O teste ampliado é a versão atual do exame, garantida pela <strong>Lei n° 14.154/2021</strong>. Ele utiliza tecnologia de espectrometria de massa em tandem (MS/MS), permitindo rastrear dezenas de doenças raras em uma única amostra de sangue, com maior precisão e sem custo adicional para a família.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">E se eu perder o prazo dos 5 dias? <span>+</span></div>
+        <div class="faq-answer">O exame <strong>ainda deve ser realizado</strong>, mesmo fora do prazo ideal. Algumas doenças podem ser detectadas em qualquer momento, e o diagnóstico precoce — mesmo que tardio em relação ao prazo ideal — ainda é melhor do que não diagnosticar. Procure sua UBS imediatamente.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">O teste é obrigatório por lei? <span>+</span></div>
+        <div class="faq-answer">Sim. O teste do pézinho é obrigatório conforme a <strong>Lei n° 10.889/01</strong> (SP) e o <strong>Programa Nacional de Triagem Neonatal</strong>, regulamentado pela Portaria GM/MS Nº 7.293. As maternidades têm obrigação de informar os pais sobre o exame antes da alta hospitalar.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ RESULTADOS ═══ -->
+  <div class="page" id="page-resultados">
+    <div class="section-header">
+      <span class="section-tag">📋 Orientações</span>
+      <h2>Resultados de Exames</h2>
+      <p>Como interpretar o laudo e o que fazer com o resultado do teste.</p>
+    </div>
+    <div class="content-area">
+
+      <div class="result-notice">
+        <div class="icon">✅</div>
+        <div>
+          <h3>Resultado Normal</h3>
+          <p>Indica que não foram encontradas alterações para as doenças rastreadas. O resultado normal <strong>não exclui completamente</strong> a possibilidade de doenças não cobertas pelo exame. Continue com as consultas de puericultura regularmente.</p>
+        </div>
+      </div>
+
+      <div class="result-notice" style="border-color: rgba(232,197,107,.3); background: linear-gradient(135deg, rgba(232,197,107,.08), rgba(232,197,107,.03));">
+        <div class="icon">⚠️</div>
+        <div>
+          <h3>Resultado Alterado — O que fazer?</h3>
+          <p>Um resultado alterado <strong>não é diagnóstico definitivo</strong>. Pode ocorrer por coleta inadequada, amostra insuficiente ou variações fisiológicas. Você será convocado para exames confirmatórios. <strong>Não entre em pânico</strong> — siga as orientações do serviço de saúde imediatamente. Quanto mais rápido, melhor o prognóstico.</p>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h3>📞 Em caso de dúvidas sobre o resultado</h3>
+        <ul>
+          <li>Procure a UBS ou maternidade onde o exame foi coletado</li>
+          <li>Entre em contato com o Serviço de Referência em Triagem Neonatal (SRTN) do seu estado</li>
+          <li>Ligue para o <strong>Disque Saúde: 136</strong></li>
+          <li>Acesse o site da Secretaria de Saúde do seu estado</li>
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h3>🔄 Coleta insatisfatória — Repetição do exame</h3>
+        <p>Em alguns casos, a amostra coletada pode ser insuficiente ou inadequada para análise. Nesses casos, o serviço de saúde solicitará uma <strong>nova coleta</strong>. Isso não significa que há problema com o bebê — é um controle de qualidade do laboratório para garantir resultado confiável.</p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>⏰ Tempo é fundamental</h3>
+        <p>Para a maioria das doenças rastreadas, o início do tratamento <strong>antes dos sintomas aparecerem</strong> é decisivo para o prognóstico. Se receber convocação para exames complementares, responda imediatamente. O tratamento precoce pode significar a diferença entre uma vida saudável e sequelas permanentes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ RC ═══ -->
+  <div class="page" id="page-rc">
+    <div class="section-header">
+      <h2>Teste do Pézinho RC</h2>
+      <p>Informações específicas sobre a triagem neonatal em Rio Claro - São Paulo.</p>
+    </div>
+    <div class="content-area">
+
+      <div class="sc-badge">Rio Claro</div>
+
+      <div class="highlight-box">
+        <p>O exame pode ser feito gratuitamente no SUS (postos de saúde) ou em laboratórios privados, como Laboratório São Lucas, LabPaulista e Laboratório Fácil, além de atendimento via Unimed.</p>
+      </div>
+
+      <div class="two-col">
+        <div class="info-block">
+          <h3>📍 Onde coletar em Rio Claro</h3>
+          <ul>
+            <li>Unidades Básicas de Saúde</li>
+            <li>Maternidades públicas e filantrópicas</li>
+            <li>Hospitais conveniados ao SUS</li>
+            <li>Postos de saúde</li>
+            <li>Laboratórios privados (com cobertura de convênios ou particular)</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h3>📞 Contatos RC
+          </h3>
+          <ul>
+            <li><strong>Laboratório Municipal de Análises Clínicas:</strong> (19) 3522-1444</li>
+            <li><strong>Fundação Municipal de Saúde:</strong> (19) 3522-3600</li>
+            <li><strong>Santa Casa de Rio Claro:</strong> (19) 3535-7000</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+<script src="script.js"></script> 
+</body>
+</html>
